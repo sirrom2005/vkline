@@ -1,0 +1,165 @@
+/*========================================================
+                       Banners
+=========================================================*/
+
+.banners {
+	margin-bottom:46px;
+	a {
+		display:inline-block;
+		max-width:100%;
+		position:relative;
+		.s-desc {
+			display:inline-block;
+			position:absolute;
+			top:50%;
+			left:2%;
+			width:96%;
+			margin-top:-33px;
+			letter-spacing:1px;
+			text-align:center;
+			font-size:16px;
+			line-height:19px;
+			.title-banner {
+				color:$textPrimary;
+				letter-spacing:2px;
+				font:400 35px/35px $secondaryFontFamily;
+				text-transform:uppercase;
+				display:inline-block;
+				margin-bottom:21px;
+			}
+			.tx-link {
+				text-transform:uppercase;
+				font-weight:300;
+				color:$baseColor;
+				text-decoration:underline;
+				@include transition(.3s all ease);
+			}			
+		}
+		margin-bottom:30px;	
+		&:hover {
+			.tx-link {
+				color:$primary;
+			}
+		}
+	}
+	line-height:0;
+}
+
+/*========================================================
+                   Responsive Banners
+=========================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.banners {
+		a .s-desc .title-banner {
+			font-size:28px;
+			line-height:28px;
+			letter-spacing: 1px;
+			margin-bottom: 17px;
+		}
+		margin-bottom:20px;
+	}
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.banners {
+		a .s-desc {
+			font-size: 14px;
+			letter-spacing: 0;
+			line-height: 16px;
+			margin-top: -25px;
+			.title-banner {
+				font-size:22px;
+				line-height:22px;
+				letter-spacing: 0;
+				margin-bottom: 14px;
+			}
+		}
+		margin-bottom:16px;
+	}
+	
+}
+
+@media (min-width: 768px) {
+
+	.banners {
+		a {
+			&:before, &:after,
+			.over:before, .over:after {
+				position:absolute;
+				display:inline-block;
+				content:'';
+				background:#fff;
+				right:0;
+				bottom:0;
+				width:0;
+				height:3px;			
+				@include transition(.5s all ease);
+			}
+			&:after {
+				top:0;
+				left:0;
+			}
+			&:before {
+				top:0;
+				left:0;
+				width:3px;
+				height:0;
+			}
+			.over:after {			
+			}
+			.over:before {
+				width:3px;
+				height:0;
+			}
+			&:hover {
+				&:before, &:after, .over:before, .over:after {
+					background:#5c5c5c;
+				}
+				&:before, .over:before {
+					height:100%;
+				}
+				&:after, .over:after {
+					width:100%;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+
+	.banners {
+		text-align:center;
+		> div {
+			display:inline-block;
+			a {
+				margin-bottom:20px;
+				border:3px solid #5c5c5c;
+			}
+		}		
+	}
+}
+
+@media (max-width: 480px) {
+
+	.banners {
+		> div {
+			width: 100%;
+		}
+		a .s-desc {
+			margin-top:-26px;
+			.title-banner {
+				font-size:28px;
+				line-height:28px;
+				letter-spacing: 0;
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+}
+

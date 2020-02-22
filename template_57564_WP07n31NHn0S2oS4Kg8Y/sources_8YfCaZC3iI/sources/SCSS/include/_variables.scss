@@ -1,0 +1,30 @@
+//--------------------------------------------------------------
+//                    Variables
+//--------------------------------------------------------------
+//Backgrounds
+$headerBg: #f6f6f4;
+$contentBg: #fff;
+$footerBg: #fff;
+$baseBg: $footerBg;
+
+// Fonts
+$baseFontFamily: 'Roboto', sans-serif;
+$secondaryFontFamily: 'Vidaloka', serif;
+$baseFontSize: 14px;
+$baseLineHeight: 21px;
+$baseFont: 400 #{$baseFontSize}/#{$baseLineHeight} $baseFontFamily;
+
+// Colors
+$baseColor: #888;
+$primary: #cda379;
+$textPrimary: #333;
+$borderColor: #e3e0d7;
+$stockBg: #f6f6f4;
+$stockBgHover: darken(saturate(adjust_hue($stockBg, 0), 0%), 3.1372549019607874%);
+
+
+// Border-radius
+$baseBorderRadius: 0;
+
+//Box Shadow
+$baseBoxShadow: 1px 1px 8px rgba(#000,.15);

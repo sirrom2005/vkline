@@ -1,0 +1,485 @@
+$dropdown-bg: #fff;
+
+header { 
+	padding:0;
+	margin:0 auto 30px;
+	background:$headerBg;
+	text-align:center;
+	letter-spacing:.7px;
+	.top-header {
+		padding:9px 35px 8px 40px;
+	}
+	.stuck-menu .pull-right {
+		margin:6px 0 0 0;
+	}
+	.logo, .nav{
+		float:left;
+	}
+	.logo {
+		margin:0 20px 24px 0;
+	}
+	.button-top {
+		float:right;
+		margin-top:8px;
+	}
+	.phone {
+		float:right;
+		font-size:18px;
+		line-height:22px;
+		font-weight:bold;
+		color:$textPrimary;
+		margin: 15px 0 10px 10px;
+	}
+	a.login-button {
+		margin:1px 0 0 35px;
+		font-size:19px;
+		line-height:23px;
+		color:$baseColor;
+		&:visited {
+			color:$baseColor;
+		}
+		&:hover, &:focus, &:active {
+			color:$textPrimary;
+		}
+	}
+	.button-wishlist {
+		position:relative;
+		display:inline-block;
+		margin:0;
+		color:$baseColor;
+		font-weight:300;
+		line-height:27px;
+		i {
+			display:inline-block;
+			font-size:27px;
+			line-height:27px;
+			height:25px;
+			margin-right:5px;
+			vertical-align:top;
+		}
+		span {
+			vertical-align:top;
+		}
+		&:hover {
+			color:$textPrimary;
+		}
+	}
+	.btn-group {
+		vertical-align:top;
+	}
+}
+
+.stuck-menu .pull-right {
+	> a, .box-cart {
+		float:right;
+	}
+}
+
+.common-home header {
+	border-bottom:none;
+	margin-bottom:0;
+}
+
+/*================  Toggle ===============*/
+.toggle-wrap {
+  position: relative;
+}
+
+.toggle {
+  &_cont {
+    display: none;
+    background: $dropdown-bg;
+    padding: 10px 0;
+    list-style-type: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 200px;
+    z-index: 20;
+    > li {
+		padding:5px 15px;
+      > a, > button {
+        text-align: left;
+        width: 100%;
+        display: block;
+        padding: 0;
+        font-size: 14px;
+		line-height:16px;
+		color:#6d6c7a;
+		font-weight:300;
+        &:hover {
+          color: #6b61a2;
+        }
+      }
+    }   
+    &__right{
+      right: auto;
+      left: 0;
+    }
+  }
+}
+
+header .nav {
+	display:inline-block;
+	margin:8px 0 0 0;
+	.toggle {
+		display: inline-block;
+		cursor: pointer;
+		position: relative;
+		font-size:23px;
+		line-height:48px;
+		text-align:center;
+		color:$baseColor;
+		&:hover {
+			color:$textPrimary;
+		}
+	}
+	.toggle_cont {
+		font-size:14px;
+		line-height:16px;
+		color:$textPrimary;
+		font-weight:300;
+		top:0;
+		right:100%;
+		> li {
+			padding:0;
+		}
+		.btn-group {
+			width:100%;
+			padding:5px 30px 5px 19px;
+			position:relative;
+			.dropdown-toggle {
+				display: inline-block;
+				cursor: pointer;
+				&:after {
+					position:absolute;
+					display: inline-block;
+					content: '\f107';
+					right:15px;
+					padding:0 10px;
+					top:5px;
+					font-size: 16px;
+					line-height:19px;
+					height:19px;
+					color:#6861a2;
+					font-weight: 400;
+					font-family: $fa;
+				}
+				&:hover {
+					color:#6b61a2;
+				}
+			}
+			.dropdown-menu {
+				display:none;
+				margin:0;
+				border:none;
+				background:none;
+				overflow:hidden;
+				position:relative;
+				@include border-radius(0);
+				@include box-shadow(none);
+				padding:10px 0 0;
+				li {
+					padding:7px 0 7px 4px;
+					font-weight:300;
+					font-size:14px;
+					line-height:16px;
+					a, button {
+						padding:0;
+						line-height:16px;
+						font-weight:300;
+						&:hover, &.active {
+							color:#6b61a2;
+							background:none;
+						}
+					}					
+				}
+			}
+			&.open {
+				.dropdown-toggle {
+					@include box-shadow(none);
+				}
+				.dropdown-menu {
+				}
+			}
+		}
+	}
+}
+/*================ Top header ==========================*/
+
+header .top-header {
+	width:100%;
+	display:inline-block;
+	background:#fff;
+}
+
+/*================   Top Links style   ===============*/
+$top-links-item-margin: 33px;
+
+header .nav {	
+	@media (min-width: 768px) {
+	.toggle_cont .log {
+		display:none;
+	}
+    > .toggle {
+      display: none;
+    }
+    > .toggle_cont {
+      display: block !important;
+      position: static;
+      padding: 0;
+      margin: 0;
+      background: none;
+      width: auto;
+      > li {
+        display: inline-block;
+        + li {
+          margin-left: $top-links-item-margin;
+        }
+        > a {
+          display: inline-block;
+          font-size: 14px;
+		  line-height:16px;
+		  font-weight:300;
+          padding: 0;
+		  color:$baseColor;
+          &:hover, &.active {
+            color: $textPrimary;
+            background: none;
+          }
+		  i {
+			display:none;
+		  }
+        }		
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    z-index: 10000;
+    @include transition(0.5s all ease);   
+
+    .toggle-wrap {
+      .toggle {
+        display: none;
+      }
+      .toggle_cont {
+        display: block !important;
+        height: auto !important;
+        position: static;
+        padding: 0;
+        @include transition(0);
+        li + li {
+          margin-top: 0;
+        }
+
+      }
+    }
+
+  }
+}
+
+header .fl-soft-icons-menu31.active {
+	background:#ebebec;
+}
+
+/*================  CURRENCY AND LANGUAGE BOXES ===============*/
+
+.box-language, .box-currency {
+	display:inline-block;
+	margin:0 0 0 25px;
+}
+
+.box-language .toggle,
+.box-currency .toggle {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: capitalize;
+  font-weight:300;
+  cursor: pointer;
+  @include transition(.3s all ease);
+  &:after {
+    display: inline-block;
+    content: '\e5c5';
+	color:#c2c2c2;
+    margin-left: 5px;
+    font-size: 24px;
+	line-height:14px;
+	height:16px;
+    font-weight: 400;
+    font-family: 'Material Icons';
+	vertical-align:top;
+  }
+  &.active, &:hover {
+    color: $primary;
+  }
+}
+
+.box-language, .box-currency {
+	.toggle_cont {
+		z-index:1003;
+		top:33px;
+		border:3px solid $headerBg;
+		border-top:none;
+		min-width:160px;
+		> li > a, > li > button {
+			color:$baseColor;
+			&:visited {
+				color:$baseColor;
+			}
+			&:hover, &:focus, &:active, &.active {
+				color:$textPrimary;
+			}
+		}
+	}
+}
+
+/*========================================================
+               Responsive Header styles
+=========================================================*/
+
+@media (max-width: 1199px) {
+	header {
+		letter-spacing: 0;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	header {
+		.nav > .toggle_cont > li + li {
+			margin-left: 25px;
+		}
+		> .container > .pull-right {
+			margin-left: 50px;
+		}
+		.button-wishlist span, .cart > button strong {
+			display:none;
+		}
+		a.login-button, .box-cart, .button-wishlist {
+			margin-left:20px;
+		}
+		.button-wishlist i, .cart > button i {
+			margin-right:2px;
+		}
+		.box-language, .box-currency {
+			.toggle:after {
+				margin-left:0;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	header {
+		.logo {
+			margin-bottom:10px;
+		}
+		.nav > .toggle_cont > li + li {
+			margin-left: 15px;
+		}
+		> .container > .pull-right {
+			margin-left: 50px;
+		}
+		a.login-button, .box-cart, .button-wishlist {
+			margin-left:20px;
+		}
+		.button-wishlist i, .cart > button i {
+			margin-right:2px;
+		}
+		.box-language, .box-currency {
+			margin-left:10px;
+			.toggle:after {
+				margin-left:0;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+  header {
+	padding-top:0;
+	div.nav__primary {
+		margin:0;
+	}
+    .search {
+      float: none;
+	  margin-bottom:10px;
+    }
+    .box-currency {
+      margin-right: 0;
+      padding: 0;
+    }
+	.top-header {
+		background:none;
+		padding-left:15px;
+		padding-right:15px;
+	}
+	.box-language, .box-currency {
+		margin-left:20px;
+		.toggle::after {
+			margin-left: 0;
+		}
+		.toggle_cont {
+			top:25px;
+		}
+	}
+	.phone {
+		float:left;
+		margin-top:20px;
+	}
+	.button-wishlist {
+		min-width:55px;
+		i {
+			margin-right:0;
+			line-height:23px;
+		}
+		span {
+			display:none;
+		}
+	}
+    .logo {
+      float: none;
+      text-align: center;
+      margin-top: 0;
+	  margin-bottom:15px;
+      img {
+        display: inline-block;
+      }
+    }
+	.stuck-menu {
+		padding:0 0 15px 0 !important;
+		.logo {
+			margin:0 !important;
+		}
+		.pull-right {
+			margin:0;
+			.login-button {
+				display:none;
+			}
+		}
+	}
+    .box-cart {
+      float: none;
+      margin-top: 0;
+    }
+	.pull-right {
+		margin:0 0 15px 0;
+		width:100%;
+	}
+    .nav__primary {
+      margin-top: 15px;
+      background: none;
+    }	
+  }
+}
+
+@media (max-width: 480px) {
+	header nav.nav {
+		right: 140px;
+	}
+}
+

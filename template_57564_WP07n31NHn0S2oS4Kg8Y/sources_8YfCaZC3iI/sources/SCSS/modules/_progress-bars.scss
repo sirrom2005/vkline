@@ -1,0 +1,71 @@
+// =======================
+// Horizontal Progress Bar
+// =======================
+.progress-horizontal {
+  background: #000;
+  height: 30px;
+  .text {
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: right;
+    padding-right: 10px;
+  }
+  .text-inner {
+    color: $textPrimary;
+  }
+  .bar {
+    background: $primary;
+    clip: rect(0, auto, auto, auto);
+  }
+}
+
+// =======================
+// Vertical Progress Bar
+// =======================
+
+.progress-vertical {
+  width: 60px;
+  margin: 0 auto;
+  background: #000;
+  height: 200px;
+  .text {
+    color: #FFF;
+    padding-top: 10px;
+  }
+  .bar {
+    background: $primary;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    clip: rect(0, auto, auto, auto);
+    .text-inner {
+      color: $textPrimary;
+      bottom: 0;
+    }
+  }
+}
+
+// =======================
+// Radial Progress Bar
+// =======================
+$bgColor: #000;
+$stroke-color: $primary;
+$trail-color: #FFF;
+
+.radial-progress {
+  svg {
+    path:first-child {
+      stroke: $trail-color !important;
+    }
+    path:last-child {
+      stroke: $stroke-color !important;
+      fill: $bgColor !important;
+    }
+  }
+  .progressbar-text {
+    color: $primary !important;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}

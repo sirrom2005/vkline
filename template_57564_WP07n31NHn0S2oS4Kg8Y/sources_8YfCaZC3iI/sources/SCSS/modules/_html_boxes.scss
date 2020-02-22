@@ -1,0 +1,469 @@
+/*========================================================
+                       HTML boxes
+=========================================================*/
+.box_html {
+
+	&.top-banners .banners-html {
+		position:relative;
+		line-height:0;
+		margin-bottom:20px;
+			> div {
+				margin-bottom:30px;
+				.s-desc {
+					position: absolute;
+					left:30px;
+					bottom:26px;
+					font: 300 19px/23px $baseFontFamily;
+					letter-spacing:1.2px;
+					color:#fff;
+					text-transform:uppercase;
+					span {
+						display:inline-block;
+						letter-spacing:1.8px;
+						font:400 36px/41px $secondaryFontFamily;
+					}
+					* + span {
+						margin-top:11px;
+					}
+				}
+				position: relative;
+				> a {
+					display: inline-block;
+					position:relative;
+					max-width:100%;
+					overflow:hidden;					
+				}
+				&.banner-1 .s-desc {
+					color:$textPrimary;
+				}
+				&.banner-2 .s-desc {
+					bottom:auto;
+					top:26px;
+				}
+				&.banner-3 .s-desc {
+					bottom:21px;
+				}
+				&.banner-4 .s-desc {
+					bottom:50%;
+					margin-bottom:-61px;
+				}
+			}		
+	}
+	
+	&.bottom-banners {
+		position:relative;
+		display:inline-block;
+		width:100%;
+		.rd-parallax-inner > div {
+			opacity:1 !important;
+		}
+		.item-bg {
+			position:absolute;
+			z-index:1;
+			top:304px;
+			left:453px;
+			width:186px;
+			height:244px;
+			content:'';
+			background:$headerBg;
+		}
+		.banner-1, .banner-2, .banner-3, .banner-4, .banner-5, .banner-6 {
+			position:relative;
+			vertical-align:top;
+			display:inline-block;
+			@include transition(0.5s all ease);
+			&:hover {
+				z-index:5;
+			}
+		} 
+		.banner-1, .banner-6 {
+			width:517px;
+			height:304px;			
+			.title {
+				font:400 35px/42px $secondaryFontFamily;
+				display:inline-block;
+				color:$textPrimary;
+				letter-spacing:-.1px;
+				text-transform:uppercase;				
+			}
+			p {
+				margin-bottom:0;
+				color:$baseColor;
+				padding-right:24%;
+				letter-spacing:.3px;
+			}
+			.title + p {
+				margin-top:7px;
+			}
+			p + .tx-link {
+				margin-top:31px;
+			}
+			.tx-link {
+				display:inline-block;
+				color:$baseColor;
+				text-transform:uppercase;
+				text-decoration:underline;
+				font:300 16px/19px $baseFontFamily;
+				letter-spacing:.7px;
+			}
+			a {
+				display:block;
+				width:100%;
+				height:100%;
+				background:#fff;
+				border:3px solid #5c5c5c;
+				padding:43px 40px 30px 50px;
+				&:hover {
+					border-color:$primary;
+					.tx-link {
+						color:$primary;
+					}
+				}
+			}
+		}
+		.banner-6 {
+			.title {
+				line-height:52px;
+			}
+			a {
+				padding-top:29px;
+			}
+			p + .tx-link {
+				margin-top:18px;
+			}
+		}
+		.banner-2, .banner-3, .banner-4, .banner-5 {
+			a {				
+			}
+		}
+		.banner-6 {
+			p {
+				padding-right:10%;
+			}
+		}
+		.banner-2 {
+			margin-top:109px;
+			margin-left:-117px;
+			z-index:2;
+		}
+		.banner-3 {
+			margin-left:-86px;
+			z-index:3;
+		}
+		.banner-4 {
+			position:absolute;
+			top:66px;
+			right:0;
+		}
+		.banner-5 {
+			clear:left;
+			margin-top:-132px;
+			margin-left:71px;
+		}
+		.banner-6 {
+			position:absolute;
+			right:31px;
+			top:290px;
+			z-index:4;
+			width:470px;
+		}
+	}
+
+}
+
+/*========================================================
+               Responsive HTML boxes
+=========================================================*/
+
+@media (min-width:1200px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+	.box_html.top-banners .banners-html > div {
+		.s-desc {
+			letter-spacing:0;
+			bottom: 21px;
+			font-size:15px;
+			line-height:18px;
+			left: 24px;
+			span {
+				font-size:29px;
+				line-height:33px;
+				letter-spacing:.5px;
+			}
+		}		
+	}
+	
+	.box_html.bottom-banners { 
+		.banner-1, .banner-6 {
+			height: 243px;
+			width: 414px;
+			a { 
+				padding: 30px 32px 24px 35px;
+				.title {
+					font-size:28px;
+					line-height:34px;
+				}
+				p {
+					letter-spacing:0;
+					font-size:13px;
+					line-height:19px;
+				}
+				p + .tx-link {
+					margin-top:20px;
+					font-size:14px;
+					line-height:16px;
+					letter-spacing:0;
+				}
+			}
+		}
+		.banner-2 {
+			margin-left: -94px;
+			margin-top: 87px;
+			max-width:241px;
+		}
+		.banner-3 {
+			margin-left: -69px;
+			max-width:188px;
+		}
+		.banner-4 {
+			top: 66px;
+			max-width:305px;
+		}
+		.banner-5 {
+			margin-left: 57px;
+			margin-top: -106px;
+			max-width:305px;
+		}
+		.item-bg {
+			height: 195px;
+			left: 362px;
+			top: 243px;
+			width: 149px;
+		}
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.box_html.top-banners .banners-html > div {
+		.s-desc {
+			font-size:13px;
+			line-height:16px;
+			letter-spacing:0;
+			bottom: 13px;
+			left: 19px;
+			span {
+				font-size:23px;
+				line-height:26px;
+				letter-spacing:0;
+			}
+		}		
+	}
+	.box_html.top-banners .banners-html > div.banner-3 .s-desc {
+		bottom: 13px;
+	}	
+	.box_html.top-banners .banners-html > div.banner-2 .s-desc {
+		top: 20px;
+	}
+	.box_html.top-banners .banners-html > div.banner-4 .s-desc {
+		margin-bottom: -49px;
+	}
+	
+	.box_html.bottom-banners { 
+		.banner-1, .banner-6 {
+			height: 194px;
+			width: 331px;
+			a { 
+				padding: 22px 6px 19px 28px;
+				.title {
+					font-size:22px;
+					line-height:26px;
+				}
+				p {
+					letter-spacing:0;
+					font-size:12px;
+					line-height:15px;
+				}
+				p + .tx-link {
+					margin-top:16px;
+					font-size:12px;
+					line-height:14px;
+					letter-spacing:0;
+				}
+			}
+		}
+		.banner-2 {
+			margin-left: -75px;
+			margin-top: 70px;
+			max-width:192px;
+		}
+		.banner-3 {
+			margin-left: -55px;
+			max-width:150px;
+		}
+		.banner-4 {
+			top: 53px;
+			max-width:244px;
+		}
+		.banner-5 {
+			margin-left: 46px;
+			margin-top: -85px;
+			max-width:244px;
+		}
+		.item-bg {
+			height: 156px;
+			left: 290px;
+			top: 194px;
+			width: 119px;
+		}
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.box_html.top-banners .banners-html > div {
+		float:left;
+		&.banner-3 {
+			clear:left;
+		}
+		> a {
+			&:after {
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				content:'';
+				display:block;
+				border:1px solid #fff;
+				opacity:0;
+				@include transition(0.5s all ease);								
+			}
+			&:hover:after{
+				opacity:0.53;
+				border-width:10px;
+			}
+		}
+	}
+	
+	.box_html.bottom-banners {
+		.banner-2, .banner-3, .banner-4, .banner-5 {
+			a {
+				&:after {
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					content:'';
+					display:block;
+					border:1px solid #fff;
+					opacity:0;
+					@include transition(0.5s all ease);	
+				}
+				&:hover:after {
+					border-width:10px;
+					opacity:.53;
+				}
+			}
+		}
+	}
+	.box_html.bottom-banners .rd-parallax-inner {
+		.banner-2 {
+			margin-top: 102px;
+		}
+		.banner-3 {
+			margin-top:-46px;
+		}
+		.item-bg {
+			margin-top:-30px;
+		}
+		.banner-4 {
+			margin-top:40px;
+		}
+		.banner-5 {
+			margin-top:-122px;
+		}
+		.banner-6 {
+			margin-top:-7px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+
+	.box_html.top-banners .banners-html {
+		text-align:center;
+		> div {
+			display:inline-block;
+			width:auto;
+			max-width:100%;
+			text-align:left;
+		}
+	}
+	.box_html.bottom-banners {
+		margin-left:-15px;
+		margin-right:-15px;
+		text-align:center;
+		display:block;
+		width:auto;
+		.item-bg {
+			display:none;
+		}
+		.banner-1, .banner-6 {
+			width: 547px;
+			max-width:100%;
+		}
+		.banner-1, .banner-2, .banner-3, .banner-4, .banner-5, .banner-6 {
+			position:relative;
+			top:auto;
+			left:auto;
+			right:auto;
+			bottom:auto;
+			margin:0 0 20px 0;
+			padding:0 15px;
+			text-align:left;
+			float:none;
+			max-width:100%;
+			vertical-align:middle;
+		} 
+	}
+
+}
+
+@media (max-width: 480px) {
+	
+	.box_html.top-banners .banners-html > div .s-desc span {
+		font-size:29px;
+		line-height:33px;
+		letter-spacing: 0;
+	}
+	.box_html.bottom-banners {
+		.banner-1, .banner-6 {
+			height:auto;
+			a {
+				padding: 25px 25px 25px 30px;
+				.title {
+					font-size:28px;
+					line-height:34px;
+				}
+				p {
+					padding:0;
+					font-size:13px;
+					line-height:19px;
+				}
+				p + .tx-link {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+}
+
+
+

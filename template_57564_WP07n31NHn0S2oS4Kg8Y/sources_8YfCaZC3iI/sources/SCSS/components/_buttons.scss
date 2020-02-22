@@ -1,0 +1,266 @@
+/*========================================================
+                         Buttons
+=========================================================*/
+.buttons {
+	margin: 1em 0;
+	@include clearfix;
+	.btn {
+		margin-bottom: 10px;   
+	}  
+	.checkout,
+	.checkout:focus,
+	.checkout:visited {
+		&:hover {
+		}
+	}
+}
+
+.agree{
+  b{
+    @include transition(.3s all ease);
+  }
+  &:hover b{
+    color: $primary;
+  }
+}
+
+/* ================   Default Buttons BEGIN   =============== */
+.btn, 
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+	font-size: 14px;
+	line-height:16px;
+	color: #fff;
+	text-transform:uppercase;
+	border: none;
+	font-weight:300;
+	padding: 12px 20px;
+	outline: none;
+	background: #5c5c5c;
+	@include border-radius(0);
+	&:visited {
+		color: #fff;
+		background: #5c5c5c;
+	}
+	&:hover, &:focus, &:active {
+		color: #fff;	
+		background: $primary;
+	}
+}
+
+
+.btn-default,
+.btn-success,
+.btn-info,
+.btn-default:visited,
+.btn-success:visited,
+.btn-info:visited
+{
+	background: lighten(#888,10%);
+	&:hover, &:focus, &:active {
+	color: #fff;
+	background: $baseColor;
+
+	}
+}
+
+/*================   Product Buttons BEGIN   ===============*/
+
+.btn-icon {
+	height:23px;
+	vertical-align:top;
+	display:inline-block;
+	i, &:before {
+		font-size:23px;
+		line-height:23px;
+		height:23px;
+		display:inline-block;
+		color:#cecece;
+		@include transition(.3s all ease);
+	}
+	&:hover i, &:hover:before {
+		color:$primary;
+	}
+}
+
+
+/* ================   QuickView  =============== */
+.product-thumb .image {
+	text-align:center;
+	.block-quickview {
+		position: absolute;
+		top:50%;
+		margin-top:-25px;
+		left:0;
+		width:100%;
+		display:inline-block;
+		opacity: 0;
+		z-index: 1;
+		.quickview {
+			padding:17px 10px;
+			min-width:164px;
+			display: inline-block;			
+			color: #fff;
+			background:rgba(#5c5c5c,.8);
+			font-size:14px;
+			line-height:16px;
+			letter-spacing:.5px;
+			text-transform:uppercase;
+			font-weight:300;			
+			&:hover {
+				background:rgba($primary,.8);
+			}
+		}
+	}
+}
+
+
+/* ================   Product page buttons  =============== */
+.buttons-product {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	li {
+		display: inline-block;
+		margin-right: 10px;
+		list-style: none;
+	}
+}
+.product-buttons {
+  @include clearfix;  
+  padding: 0;
+  color:#343434;
+  font:300 14px/23px $baseFontFamily;
+  vertical-align:top;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  span {
+	vertical-align:top;
+  }
+  i {
+	font-weight:400;
+	font-size:23px;
+	line-height:23px;
+	vertical-align:top;
+	color:#cecece;
+	@include transition(.3s all ease);
+	&.material-icons-add {
+		color:#343434;
+		font-size:14px;
+		line-height:23px;
+	}
+  }
+  &:visited {
+	color:#343434;
+	i {
+		color:#cecece;
+	}
+	i.material-icons-add {
+		color:#343434;
+	}
+  }
+  &:hover, &:active, &:focus {
+	color:$primary;
+	i , i.material-icons-add{
+		color:$primary;
+	}
+  }
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    list-style: none;
+    button {
+      display: inline-block;
+	  padding:0;
+      &:hover{
+      }
+    }
+  }
+}
+
+#button-cart {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/*========================================================
+                 Responsive styles Buttons
+=========================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.product-thumb .image .block-quickview .quickview {
+		font-size: 12px;
+		letter-spacing: 0;
+		min-width: 131px;
+		padding: 17px 8px;
+	}
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.table-bordered > tbody > tr > .text-right {
+		padding: 5px;
+	}
+	.product-thumb .image .block-quickview {
+		margin-top:-18px;
+		.quickview {
+			font-size: 11px;
+			letter-spacing: 0;
+			min-width: 120px;
+			padding: 12px 5px;
+		}
+	}
+	.product-buttons {
+		font-size:13px;
+		letter-spacing:-0.2px;
+	}
+  
+}
+
+@media (max-width: 767px) {
+	
+	#grid-view, #list-view {
+		display: none;
+	}
+
+	.product-thumb .block-quickview {
+		display: none !important;
+	}
+}
+
+
+@media (max-width: 479px) {
+
+  .buttons {
+    .pull-left, .pull-right {
+      float: none !important;
+      margin-left: 0;
+    }
+  }
+  #button-cart {
+    display: block;
+    margin: 15px 0 0;
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 410px) {
+
+  .account-address {
+    .table td a {
+      display: block;
+      + a {
+        margin-top: 5px;
+      }
+    }
+  }
+  
+}
+

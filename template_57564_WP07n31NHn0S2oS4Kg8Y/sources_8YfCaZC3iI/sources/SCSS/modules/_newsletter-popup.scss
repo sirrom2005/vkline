@@ -1,0 +1,161 @@
+//--------------------------------------------------------------
+//                    NewsLetter Popup Module
+//--------------------------------------------------------------
+
+#tm-newsletter-popup-form{
+  @include clearfix;
+}
+.newsletter-popup-wrap{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background: rgba(#000,.5);
+}
+
+.newsletter-popup {
+	position: absolute;
+	@include clearfix;
+	top:50%;
+	left:50%;
+	width: 983px;
+	height:386px;
+	margin-left:-492px;
+	margin-top:-193px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	padding: 96px 80px 0;
+	border:3px solid $headerBg;
+	text-align: center;
+
+  h2 {
+    text-transform: uppercase;
+    font: 400 35px/42px $secondaryFontFamily;
+	letter-spacing:2px;
+    margin: 0;
+	&:after {
+		display:none;
+	}
+    + p {
+		margin: 16px 0 25px;
+		padding:0 26%;
+    }
+  }
+
+
+  .tm-login-form {
+    position: relative;
+    @include clearfix;
+	width:100%;
+	margin-top:2px;
+    input {
+      width: 494px;
+	  text-align:left;
+      @include box-sizing(border-box);
+      border: 1px solid $borderColor;
+	  font:400 14px/18px 'Arial';
+	  height:50px;
+	  display:inline-block;
+	  padding:14px 15px 15px 18px;
+	  color:$baseColor;
+	  background:#fff;
+      border-radius: 0;
+	  margin-right:3px;
+    }   
+  }
+
+  .logo + h2 {
+    margin-top: 10px;
+  }
+
+  .logo img{
+    display: inline-block;
+  }
+
+  &-close-btn {
+    background: none;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 36px;
+    top: 32px;
+    color: $baseColor;
+    font-size: 23px;
+    line-height: 23px;
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &-btn {
+	padding:17px 21px;
+	letter-spacing:.7px;
+    border: none;
+    outline: none;
+    display: inline-block;
+	font:300 14px/16px $baseFontFamily;
+	vertical-align:top;
+  } 
+}
+a.newsletter-popup-dont-show {
+	font-size:14px;
+	line-height:16px;
+	color:lighten(#888,30%);
+	margin-top:40px;
+	letter-spacing:.7px;
+	&:visited {
+		color:lighten(#888,30%);
+	}
+	&:hover, &:focus, &:active {
+		color:$primary;
+	}
+  }
+
+.newsletter-popup .newsletter-error,.newsletter-popup .newsletter-success{
+  display: block;
+  width:100%;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  position: absolute;
+  top: 100%;
+  @include transition(.3s all ease);
+}
+
+.newsletter-error + .newsletter-success {
+	margin-top:20px;
+}
+
+.newsletter-error{
+  color: #D4323D;
+  margin-top:2px !important;
+}
+.newsletter-success{
+  color: #55C65E;
+}
+
+//--------------------------------------------------------------
+//          NewsLetter Popup Module Responsive Layout
+//--------------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 991px){
+	.newsletter-popup {
+		margin-left: -369px;
+		padding-left:40px;
+		padding-right:40px;
+		width: 738px;
+		h2 + p {
+			padding: 0 10%;
+		}
+	}
+}
+
+@media (max-width: 767px){
+  .newsletter-popup-wrap{
+    display: none !important;
+  }
+}

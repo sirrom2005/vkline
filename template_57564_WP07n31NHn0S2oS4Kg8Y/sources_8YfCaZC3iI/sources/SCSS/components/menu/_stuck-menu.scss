@@ -1,0 +1,51 @@
+/*==================  Stuck menu  ======================*/
+
+$stuck-bg: $stockBg;
+
+.stuck-menu {
+  width: auto !important;
+  padding:24px 35px 0 39px;
+  &.scroll-fix {
+	padding-top:9px;
+	border-bottom:1px solid darken($headerBg,5%);
+	.logo {
+		margin-top:4px;
+		margin-bottom:7px;
+	}
+	.nav__primary .menu > li > a.sf-with-ul {
+		padding-bottom: 19px;
+	}
+	.cart .toggle_cont {
+		top: 34px;
+	}
+	.pull-right {
+		margin-top:10px;
+	}
+  }
+}
+.ajax-overlay-open .scroll-fix{
+  z-index: 996;
+}
+
+@media only screen and (min-width: 991px) {
+  .scroll-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    // Custom styles
+    background: $stuck-bg;
+	@include transition(.5s padding ease);
+	@include box-shadow(0 3px 3px rgba(#000,.05));
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .stuck-menu {
+    position: static;
+    + .stuck-menu{
+       display: none;
+    }
+  }
+}

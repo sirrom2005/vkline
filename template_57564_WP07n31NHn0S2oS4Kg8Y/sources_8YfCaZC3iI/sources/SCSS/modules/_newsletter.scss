@@ -1,0 +1,168 @@
+//--------------------------------------------------------------
+//                    NewsLetter Block
+//--------------------------------------------------------------
+.newsletter{
+	.box-content{
+		background: none;
+		padding: 0;
+	}
+	.dropdown-btn{
+		font:300 14px/16px $baseFontFamily;
+		color:#fff;
+		text-transform:uppercase;
+		background:#5c5c5c;
+		padding:17px 20px;
+		vertical-align:top;
+		letter-spacing:1px;
+		margin-left:3px;
+		i{
+		display:none;
+		}
+		&:hover{
+			background:$primary;
+		}
+	}
+	.tm-login-form {
+		display:inline-block;
+		background:#fff;
+		border:1px solid $borderColor;
+		height:50px;
+		letter-spacing:1px;
+		.newsletter-description {
+			display:inline-block;
+			float:left;
+			margin:15px 8px 0 17px;
+			font:400 15px/18px $secondaryFontFamily;
+			text-transform:uppercase;
+			color:$textPrimary;
+			vertical-align:top;
+		}
+		input[type="text"] {
+			float:right;
+			display:inline-block;
+			vertical-align:top;
+			width:290px;
+			height:50px;
+			padding:11px 15px 12px 5px;
+			color:$baseColor;
+			border:none;
+			background:none;
+			&.form-control:focus{
+				@include box-shadow(none);
+			}
+			&::-webkit-input-placeholder{
+				font-family:$baseFontFamily;
+				font-weight:300;
+			}
+			&:-moz-placeholder{
+				font-family:$baseFontFamily;
+				font-weight:300;
+			}
+			&::-moz-placeholder{
+				font-family:$baseFontFamily;
+				font-weight:300;
+			}
+			&:-ms-input-placeholder  {
+				font-family:$baseFontFamily;
+				font-weight:300;
+			}
+		}
+	}
+	&.box {
+		margin-bottom:77px;
+	}
+}
+
+.newsletter-block {
+	.newsletter-error{
+		bottom:45px;
+		margin:0;
+	}
+	.newsletter-error + .newsletter-success {
+		bottom:25px;
+		margin:0;
+	}
+}
+
+.newsletter-error,
+.newsletter-success{
+	left:0;
+	width:100%;
+	display:block;
+	position:absolute;
+	bottom:5px;
+}
+
+
+//--------------------------------------------------------------
+//            NewsLetter Block Responsive Layout
+//--------------------------------------------------------------
+
+// safari only
+@media all and (-webkit-min-device-pixel-ratio:0) {
+	.newsletter div.tm-login-form {
+		line-height:16px;
+		padding-top:16px;
+		padding-bottom:16px;
+		text-align:left;
+		.newsletter-description {
+			vertical-align:baseline;
+			margin-top:0;
+			float:none !important;
+		}
+		input[type="text"] {
+			height:16px;
+			line-height:16px;
+			float:none !important;
+			padding-top:0 !important;
+			padding-bottom:0 !important;
+			margin:0 !important;
+			top:0 !important;
+			border:none;
+			vertical-align:baseline;
+		}
+	}
+}
+
+
+.android.mobile {
+	footer .newsletter div.tm-login-form {
+		line-height:16px;
+		padding-top:16px;
+		padding-bottom:16px;
+		text-align:left;
+		.newsletter-description {
+			vertical-align:baseline;
+			margin-top:0;
+			float:none;
+		}
+		input[type="text"] {
+			height:16px;
+			line-height:16px;
+			float:none !important;
+			padding-top:0 !important;
+			padding-bottom:0 !important;
+			margin:0 !important;
+			top:0 !important;
+			border:none;
+			vertical-align:baseline;
+		}
+	}
+}
+
+@media (max-width: 767px){
+	.newsletter-block .newsletter.box {
+		margin-bottom:0;
+		form {
+			padding-bottom:70px;
+		}
+	}
+}
+@media (max-width: 480px){
+	.newsletter-block .newsletter.box {
+		.newsletter-description {
+			margin-left:7px;
+			margin-right:0;
+		}
+	}
+}

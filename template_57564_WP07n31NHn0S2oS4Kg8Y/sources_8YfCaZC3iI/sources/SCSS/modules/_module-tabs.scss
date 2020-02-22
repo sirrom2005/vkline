@@ -1,0 +1,30 @@
+/*========================================================
+                 Tab Products Module
+=========================================================*/
+.module_tab {
+  clear: both;
+  margin-top: 30px;
+  .nav-tabs {
+    padding: 0;
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+      > a, > a:focus {
+        font: 500 20px/34px $baseFontFamily;
+        color: $textPrimary;
+      }
+      &.active > a, > a:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.tab-content {
+  margin-top: 30px;
+}
+
+/*========================================================
+           Tab Products Module Responsive Layout
+=========================================================*/

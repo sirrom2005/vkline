@@ -1,0 +1,146 @@
+/*========================================================
+                          Box
+=========================================================*/
+.box {
+	margin-bottom: 30px;
+	.box-heading {	
+		padding:20px 15px 19px;
+		text-align:center;
+		margin: 0 0 30px;
+		position:relative;
+		border:1px solid $borderColor;
+		h3 {
+			margin: 0;
+			font: 400 16px/19px $baseFontFamily;
+			text-transform:uppercase;
+			letter-spacing:.7px;
+		}
+	}
+}
+
+.box .product-thumb {
+	width:100%;
+	max-width:370px;
+}
+
+aside .box  {
+	margin-bottom: 40px;
+	.product-layout {
+		width: 100%;
+		margin-bottom:0;
+		.product-thumb {			
+			margin-bottom:20px;
+		}
+	}
+	&.bestsellers, &.latest, &.specials, &.featured {
+		margin-bottom:20px;
+	}
+}
+
+aside{
+  [class*="col-"],.container{
+    width: 100%;
+    padding: 0;
+  }
+  .row{
+    margin: 0;
+  }
+}
+
+.common-home #content > .box {
+	position:relative;
+	z-index:1;
+	display:inline-block;
+	width:100%;
+	margin-bottom:29px;
+	.box-heading {
+		margin-bottom:30px;
+		h3 {
+		}		
+	}
+}
+
+/*========================================================
+                    Responsive Box
+=========================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.common-home #content > .box {
+		margin-bottom: 20px;
+	}
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.box .box-heading h3 {
+		letter-spacing: 0;
+	}
+ 
+}
+
+@media (max-width: 767px) {
+	aside .box .product-layout {
+		text-align:center;
+		.product-thumb {
+			text-align:left;
+		}
+	}
+	aside .box .box-heading {
+		position: relative;
+		cursor: pointer;
+		padding:15px 40px 15px 20px;
+		margin-bottom:15px;
+		background:$headerBg;		
+		h3 {
+			font-size:20px;
+			line-height:24px;
+		}
+		&:after {
+			content: '\f055';
+			position: absolute;
+			left:auto;
+			bottom:auto;
+			right: 20px;
+			top: 15px;
+			font-size: 24px;
+			line-height:24px;
+			font-family: $fa;
+			color: $baseColor;
+			width:auto;
+			height:auto;
+			background:none;
+		}
+		&.active {
+			&:after {
+				content: '\f056';
+			}
+		}
+		&:hover:after {
+			color:$primary;
+		}
+	}
+	.common-home #content > .box {
+		margin-bottom: 30px;
+		text-align:center;
+		.product-layout {
+			float:none;
+			text-align:left;
+			display:inline-block;
+			max-width:400px;
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+  aside .box {
+	text-align:center;
+	.product-thumb{
+		text-align:left;
+		width: 370px;
+		max-width:100%;
+		margin: 0 10px 25px;
+	}
+  }
+}

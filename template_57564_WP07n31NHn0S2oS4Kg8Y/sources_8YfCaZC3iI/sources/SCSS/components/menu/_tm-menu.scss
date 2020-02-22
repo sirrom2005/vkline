@@ -1,0 +1,218 @@
+/*========================================================
+                       Menu styles
+=========================================================*/
+@import "_floated-menu.scss";
+
+.nav__primary {
+	display:inline-block;
+	padding: 0;
+	margin:13px 0 0;
+	position:relative;
+	z-index:5;
+	text-align:left;
+	margin-left:6%;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+/*================ Menu  ===============*/
+.nav__primary .menu {
+  li {
+    position: relative;
+	font-size:16px;
+	line-height:19px;
+	font-weight:bold;
+	color:$baseColor;
+	a {
+		color:$baseColor;
+		text-transform:uppercase;
+		font-weight:300;
+	}
+    &.sfHover > a, 
+	> a:hover, 
+	> a.active {
+		color:$textPrimary;
+    }
+  }
+  li > a {
+    display: block;
+  }
+  > li {
+		> a {
+			&.sf-with-ul {
+				padding-bottom:32px;
+			}
+		}
+	&.sfHover > a, 
+		> a:hover, 
+		> a.active {
+			&:after{
+				width:100%;
+				background:#6b61a2;				
+			}
+			> span {
+			}
+		}
+	}
+}
+
+/*================ Sub-menu lvl1  ===============*/
+.nav__primary .menu ul {
+	display: none;
+	position: absolute;
+	z-index: 109;
+	left: 0;
+	top: 100%;
+	width: 250px;
+	margin-top: 5px;
+	@include box-sizing(border-box);
+	padding:29px 0 36px;
+	background:#fff;  
+	border:3px solid $headerBg;
+	border-top:none;
+}
+
+/*================ Sub-menu lvl1 item  ===============*/
+.nav__primary .menu ul {
+	li {
+		position: relative;
+		display: inline-block;
+		padding:9px 35px 9px 40px;
+		width:100%;
+		font-size:14px;
+		line-height:16px;
+	a {
+		display: inline-block;
+	}
+	}
+	li.active > a, 
+	a:hover, 
+	li.sfHover > a {
+		color: $textPrimary;
+	}
+}
+
+/*================ Sub-menu lvl2 ===============*/
+.nav__primary .menu ul ul {
+  left: 100%;
+  top: 0;
+  margin-left: 5px;
+  margin-top: -15px;
+  border-top:3px solid $headerBg;
+  &:before{
+    display: none;
+  }
+}
+
+.menu-gadget {
+  display: none!important;
+}
+
+//--------------------------------------------------------------
+//                      sf-with-ul styles
+//--------------------------------------------------------------
+.nav__primary .menu > li > .sf-with-ul {
+  position: relative;
+  &:before {
+   display:none;
+  }
+}
+
+.nav__primary .menu ul > li > .sf-with-ul {
+  &:before {
+    display:inline-block;
+	content:'\e5cc';
+	font:400 19px/16px 'Material Icons';
+	color:#c9c9c9;
+	position:absolute;
+	top:9px;
+	right:25px;
+  }
+}
+
+.sfHover .sfHover .sf-with-ul:before{
+  display:none;
+}
+
+@media (max-width: 767px) {
+  .nav__primary .menu {
+    display: none;
+  }
+}
+
+/*========================================================
+               Responsive Header styles
+=========================================================*/
+
+@media (max-width: 1370px) { 
+	.nav__primary {
+		margin-left:0;
+		.menu {
+			ul {
+				width: 230px;
+				li {
+					padding-left:35px;
+					padding-right:30px;
+				}
+			}			
+			> li + li {
+				margin-left: 25px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	.nav__primary ul.menu ul {
+		width: 200px;
+		padding-top:20px;
+		padding-bottom:25px;
+		li {
+			padding:7px 20px;
+		}
+		> li > .sf-with-ul::before {
+			right: 15px;
+			top:7px;
+		}
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.nav__primary {
+		margin-left:0;
+		.menu {			
+			li {
+				font-size:14px;
+			}
+			> li + li {
+				margin-left: 18px;
+			}			
+		}
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	div.nav__primary {
+		margin-left:0;
+		width:100%;
+		float:left;
+		.menu {
+			li {
+				font-size:15px;
+			}
+			> li + li {
+				margin-left: 20px;
+			}
+			> li > a.sf-with-ul {
+				padding-bottom: 17px;
+			}
+		}
+	}
+
+}

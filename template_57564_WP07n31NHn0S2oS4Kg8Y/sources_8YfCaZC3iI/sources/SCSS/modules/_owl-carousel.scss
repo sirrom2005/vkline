@@ -1,0 +1,110 @@
+//--------------------------------------------------------------
+//                    Owl Carousel Module
+//--------------------------------------------------------------
+.owl-carousel {
+  position: relative;
+  direction: ltr !important;
+  margin: 0 -15px;
+  width: auto;
+  .owl-item{
+    padding: 0 15px;
+    width: auto;
+  }
+}
+
+// Navigation
+
+.top-brands .owl-carousel .owl-item a:hover img {
+	opacity:.7;
+}
+.owl-carousel {
+	.owl-item a img {
+		background:$headerBg;
+		@include transition(.3s all ease);
+	}	
+  .owl-buttons {
+    div {
+      opacity: 0;
+      color: $borderColor;
+      @include transition(.3s all ease);
+      font-size: 40px;
+	  line-height:40px;
+      margin: -20px 0 0;
+	  i {
+		display:inline-block;
+		line-height:40px;
+		height:40px;
+	  }
+      &:hover {
+        color: $primary;
+      }
+    }
+    .owl-prev {
+      left: -5px;
+    }
+    .owl-next {
+      right: -5px;
+    }
+  }
+  &:hover{
+    .owl-buttons {
+      div {
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .owl-buttons {
+      div{
+        opacity: .7;
+      }
+      .owl-prev{
+        left: -8px;
+      }
+      .owl-next{
+        right: -8px;
+      }
+    }
+  }
+}
+
+.related-products .owl-carousel {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.testimonials.owl-carousel{
+   .owl-buttons{
+     margin-top: 30px;
+    div{
+      opacity: 1;
+      position: static;
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+}
+
+// Pagination
+
+.owl-pagination {
+  text-align: center;
+  top: 40px;
+  position: relative;
+  display:none !important;
+}
+.owl-controls .owl-page {
+  display: inline-block;
+  margin: 0px 6px;
+  span {
+    display: block;
+    width: 11px;
+    height: 11px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+  }
+  &.active span{
+    background: rgba(0, 0, 0, 0.9);
+  }
+}

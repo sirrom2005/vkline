@@ -1,0 +1,3 @@
+G:\www\vkline\catalog\view\theme\theme638\template\common\footer.tpl
+G:\www\vkline\catalog\view\theme\theme638\stylesheet\stylesheet.css
+G:\www\vkline\catalog\view\theme\theme638\image\sprite-social.png

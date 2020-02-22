@@ -1,0 +1,234 @@
+//--------------------------------------------------------------
+//                    Search Form
+//--------------------------------------------------------------
+// input variables
+$form-bg: #fff;
+$form-width: 200px;
+$form-height: 33px;
+$form-color: $baseColor;
+
+// button variables
+$form-submit-color: $baseColor;
+$form-submit-hover: $textPrimary;
+
+.search {
+	position: relative; 
+	float:right;
+	input[type="text"] {
+		color: $form-color;
+		background:$form-bg;
+		display: block;
+		margin: 0;	
+		font-size: 14px;
+		line-height: 18px;
+		height: $form-height;
+		padding: 5px 25px (($form-height - 21px) / 2) 5px;
+		border: 3px solid #fff;
+		@include box-sizing(border-box);
+    &:focus{
+      outline: none;
+    }
+    &::-webkit-input-placeholder{
+      color: $form-color;
+      opacity: 1;
+    }
+    &:-moz-placeholder{
+      color: $form-color;
+      opacity: 1;
+    }
+    &::-moz-placeholder{
+      color: $form-color;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder  {
+      color: $form-color;
+      opacity: 1;
+    }
+  }
+	button {
+		@include reset-button;
+		@include transition(.3s all ease);
+		font: 400 27px/#{$form-height} $fa;
+		height:$form-height;
+		color: $form-submit-color;
+		vertical-align:top;
+		&:focus, &:active {
+			color: $form-submit-color;
+		}
+		i {
+			vertical-align:top;
+		}
+	}
+	button:hover, button:focus:hover, button:active:hover {
+		color: $form-submit-hover;
+	}
+}
+
+//--------------------------------------------------------------
+//                    Responsive Search Form Layout
+//--------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------
+//                    Live Search
+//--------------------------------------------------------------
+#livesearch_search_results {
+  margin: 9px 0 0;
+  padding: 5px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  min-width:290px;
+  right: 0;
+  text-align:left;
+  background-color: $dropdown-bg;
+  border:3px solid $headerBg;
+  border-top:none;
+  list-style-type: none;
+  z-index: 1003;
+  font-size: 14px;
+  li{
+    img{
+      float: left;
+      margin-right: 10px;
+      &.loading{
+        background: $stockBg;
+      }
+    }
+    &:hover, &.highlighted{
+      background-color: darken($dropdown-bg,5%);
+      a, a:visited{
+        color: $primary;
+      }
+    }
+
+  }
+  a, a:visited{
+    display: block;
+    padding: 5px;
+    color: $textPrimary;
+    @include clearfix;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #livesearch_search_results li img{
+    display: none!important;
+  }
+}
+
+@media (min-width: 768px) {
+	.search {
+		position:relative;
+		z-index:1004;
+		display: inline-block;
+		margin:0 0 0 20px;
+		.search-block {
+			@include transition(.3s all ease);
+		}
+		button {
+			position: relative;
+			z-index: 2;
+			display: inline-block;
+			outline: none;
+			outline-offset: 0;
+			cursor: pointer;
+			@include transition(.3s all ease);
+		}
+		input[type="text"] {
+			position:absolute;
+			right:0;
+			top:0;
+			display: block;
+			float:left;
+			width: 0;
+			background:#fff;
+			@include transition(.3s all ease);
+			color:rgba($form-bg,0);
+			&::-webkit-input-placeholder{
+				color:rgba($form-bg,0);
+				@include transition(.3s all ease);
+			}
+			&:-moz-placeholder{
+				color:rgba($form-bg,0);
+				@include transition(.3s all ease);
+			}
+			&::-moz-placeholder{
+				color:rgba($form-bg,0);
+				@include transition(.3s all ease);
+			}
+			&:-ms-input-placeholder  {
+				color:rgba($form-bg,0);
+				@include transition(.3s all ease);
+			}
+			&:focus{
+				outline: none;
+				width: $form-width;
+				padding-left:18px;
+				padding-right:50px;
+				color: $form-color;
+				border-color:darken($form-bg,5%);
+				background:$form-bg;
+				&::-webkit-input-placeholder{
+				  color: $form-color;
+				}
+				&:-moz-placeholder{
+				  color: $form-color;
+				}
+				&::-moz-placeholder{
+				  color: $form-color;
+				}
+				&:-ms-input-placeholder  {
+				  color: $form-color;
+				}
+			}			
+		}
+		&:hover .search-block, .search-block.active {
+			background:$form-bg;			
+			input {
+				width: $form-width;
+				padding-left:18px;
+				padding-right:50px;
+				color: $form-color;
+				border-color:darken($form-bg,5%);
+				background:$form-bg;
+				&::-webkit-input-placeholder{
+				  color: $form-color;
+				  -webkit-transition-delay: .3s;
+					transition-delay: .3s;
+				}
+				&:-moz-placeholder{
+				  color: $form-color;
+				  -webkit-transition-delay: .3s;
+					transition-delay: .3s;
+				}
+				&::-moz-placeholder{
+				  color: $form-color;
+				  -webkit-transition-delay: .3s;
+					transition-delay: .3s;
+				}
+				&:-ms-input-placeholder  {
+				  color: $form-color;
+				  -webkit-transition-delay: .3s;
+					transition-delay: .3s;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.search {
+		button {
+			top:0;
+			right:0;
+			position:absolute;
+		}
+		input[type="text"] {
+			padding-left:15px;
+		}
+	}
+}
+
+
